@@ -19,7 +19,18 @@ const Home = () => {
             </S.HomeHeaderDetailsSearch>
           </S.HomeHeaderDetails>
         </header>
+        <div>
+          <S.HomeProductTitle>
+            <b>Pizzas</b>
+          </S.HomeProductTitle>
+          <S.HomeProductList>
+            <p>Lista de produtos aqui</p>
+          </S.HomeProductList>
+        </div>
       </S.HomeContent>
+      <aside>
+        <p>Detalhes dos pedidos aqui</p>
+      </aside>
     </S.Home>
   );
 };
