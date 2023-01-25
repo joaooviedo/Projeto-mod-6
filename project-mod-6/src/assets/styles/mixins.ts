@@ -1,7 +1,6 @@
 import { css } from "styled-components";
 import { colors } from "./colors";
 import { constants } from "./constants";
-import down from "../icons/down.svg";
 
 const logoStyle = () => css`
   font-family: ${constants.logoFontFamily};
@@ -101,7 +100,6 @@ appearance: none;
 background: ${important ? colors.secondaryColor : "transparent"};
 border: ${important ? "none" : "1px solid " + colors.baseLine};
  color: ${colors.textColor};
- background-image: url(${down});
  background-repeat: no-repeat;
  padding-right: 50px;
  background-position: 85%;
