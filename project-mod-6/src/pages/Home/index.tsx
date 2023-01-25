@@ -5,6 +5,7 @@ import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import { DateTime } from "luxon";
 import ProductItemList from "components/ProductItemList";
+import ProductItem from "components/ProductItem";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -13,7 +14,6 @@ const Home = () => {
   });
   return (
     <S.Home>
-
       <Menu active={RoutePath.HOME} navItems={navigationItems} />
       <S.HomeContent>
         <header>
@@ -21,7 +21,7 @@ const Home = () => {
             <div>
               <S.HomeHeaderDetailsLogo>Pizza Fresh</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
-              {dateDescription}
+                {dateDescription}
               </S.HomeHeaderDetailsDate>
             </div>
             <S.HomeHeaderDetailsSearch>
@@ -35,7 +35,9 @@ const Home = () => {
             <b>Pizzas</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-          <ProductItemList></ProductItemList>
+            <ProductItemList>
+              <ProductItem />
+              </ProductItemList>
           </S.HomeProductList>
         </div>
       </S.HomeContent>
