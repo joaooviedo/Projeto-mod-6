@@ -1,13 +1,12 @@
 import styled, { css } from "styled-components";
-import { Theme } from "types/styled-components";
 
-export const ManageUsers = styled.section`
-  ${() => css`
+export const ManageTables = styled.section`
+  ${({ theme }) => css`
     padding: 20px;
   `}
 `;
 
-export const ManageUsersTitle = styled.h1`
+export const ManageTablesTitle = styled.h1`
   ${({ theme }) => css`
     ${theme.mixins.bodyStyle()};
     font-size: 20px;
@@ -15,7 +14,7 @@ export const ManageUsersTitle = styled.h1`
   `}
 `;
 
-export const ManageUsersSub = styled.h2`
+export const ManageTablesSub = styled.h2`
   ${({ theme }) => css`
     ${theme.mixins.bodyStyle()};
     margin: 25px 0 0 0;
@@ -38,7 +37,7 @@ export const ManageUsersSub = styled.h2`
   `}
 `;
 
-export const ManageUsersContent = styled.div`
+export const ManageTablesContent = styled.div`
   ${() => css`
     margin-top: 15px;
     justify-content: center;
@@ -51,27 +50,41 @@ export const ManageUsersContent = styled.div`
     overflow: auto;
   `}
 `;
-export const ManageUsersContentAdd = styled.div`
+export const ManageTablesContentAdd = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 200px;
-    max-height: 320px;
-    box-sizing: border-box;
-    padding: 10px 0;
     color: ${theme.colors.primaryColor};
     ${theme.mixins.bodyStyle()};
     font-weight: 500;
     border: 1px dashed ${theme.colors.primaryColor};
+    height: 200px;
     border-radius: 8px;
     gap: 10px;
     cursor: pointer;
+    /* Chrome */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+    label {
+      text-transform: uppercase;
+      ${theme.mixins.bodyStyle()};
+      font-size: 20px;
+      font-weight: 500;
+    }
   `}
 `;
 
-export const ManageUsersActions = styled.div`
+export const ManageTablesActions = styled.div`
   ${() => css`
     margin-top: 20px;
     display: flex;
@@ -79,40 +92,23 @@ export const ManageUsersActions = styled.div`
   `}
 `;
 
-export const ManageUsersActionsCancel = styled.button`
+export const ManageTablesActionsCancel = styled.button`
   ${({ theme }) => css`
     width: 172px;
     ${theme.mixins.buttonOutline(theme.colors.secondaryColor)};
   `}
 `;
 
-export const ManageUsersActionsSave = styled.button`
+export const ManageTablesActionsSave = styled.button`
   ${({ theme }) => css`
     width: 172px;
     ${theme.mixins.buttonFilled()};
   `}
 `;
 
-const EditFormMixins = {
-  error: (theme: Theme) => css`
-    border: 2px solid ${theme.colors.secondaryColor};
-  `,
-  success: (theme: Theme) => css`
-    border: 2px solid ${theme.colors.primaryColor};
-  `,
-};
-
-export const EditForm = styled.input<{ error?: boolean; success?: boolean }>`
-  ${({ theme, error = false, success }) => css`
+export const EditForm = styled.input`
+  ${({ theme }) => css`
     ${theme.mixins.input()};
     color: ${theme.colors.textColor};
-    ${error && EditFormMixins.error(theme)}
-    ${success && EditFormMixins.success(theme)}
-    &:valid[type="url"] {
-      ${success && EditFormMixins.success(theme)}
-    }
-    &:invalid {
-      ${EditFormMixins.error(theme)}
-    }
   `}
 `;
