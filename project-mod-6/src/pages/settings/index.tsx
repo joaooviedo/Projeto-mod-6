@@ -15,7 +15,9 @@ const Settings = () => {
         </header>
         <S.SettingsContent>
           <S.SettingsContentSidebar>
-            <NavColumn />
+
+            
+            <NavColumn activeRoute={RoutePath.SETTINGS_PRODUCTS} />
           </S.SettingsContentSidebar>
           <S.SettingsContentBox>
             <S.SettingsContentBoxEmpty>
