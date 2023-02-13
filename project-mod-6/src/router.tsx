@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { RoutePath } from "./types/routes";
 import Login from "pages/Login";
-import Settings from "pages/Settings";
+import Settings from "pages/settings";
 
 const Router = () => {
   return (
