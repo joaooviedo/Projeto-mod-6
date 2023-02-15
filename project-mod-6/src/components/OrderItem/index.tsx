@@ -7,6 +7,7 @@ import * as S from "./style";
 type DivType = ButtonHTMLAttributes<HTMLDivElement>;
 
 export type OrderItemProps = {
+  canDelete?: Boolean;
   product: ProductResponse;
   quantity: number;
   observation?: string;
@@ -20,6 +21,7 @@ const OrderItem = ({
   observation = "",
   onRemoveItem,
   onItemChange,
+  canDelete = true,
   ...props
 }: OrderItemProps) => {
   const [quantityState, setQuantityState] = useState(quantity);
@@ -86,13 +88,16 @@ const OrderItem = ({
           }}
         />
       </S.OrderItemLeft>
-      <S.OrderItemRight></S.OrderItemRight>
-      <S.OrderItemRightTotalPrice>
-        R$ {Number(product.price * quantityState).toFixed(2)}
-      </S.OrderItemRightTotalPrice>
-      <S.OrderItemRightTrash onClick={onRemoveItem}>
-        <Trash />
-      </S.OrderItemRightTrash>
+      <S.OrderItemRight>
+        <S.OrderItemRightTotalPrice>
+          R$ {Number(product.price * quantityState).toFixed(2)}
+        </S.OrderItemRightTotalPrice>
+        {canDelete && (
+          <S.OrderItemRightTrash onClick={onRemoveItem}>
+            <Trash />
+          </S.OrderItemRightTrash>
+        )}
+      </S.OrderItemRight>
     </S.OrderItem>
   );
 };

@@ -1,16 +1,36 @@
 import CheckboxIcon from "components/CheckboxIcon/Index";
 import OrderConfirmation from "components/OrderConfirmation";
 import * as S from "./style";
-
 import { ReactComponent as Card } from "assets/icons/credit-card.svg";
 import { ReactComponent as Cash } from "assets/icons/wallet.svg";
+import { HTMLAttributes, useState } from "react";
+import { OrderItemType } from "types/OrderItemType";
 
-const CheckoutSection = () => {
+type CheckoutSectionType = HTMLAttributes<HTMLDivElement>;
+
+type CheckoutSectionProps = {
+  orders: OrderItemType[];
+  onOrdersChange: (orders: OrderItemType[]) => void;
+  onCloseSection: () => void;
+} & CheckoutSectionType;
+
+const CheckoutSection = ({
+  orders,
+  onOrdersChange,
+  onCloseSection,
+}: CheckoutSectionProps) => {
+  const [closing, setClosing] = useState<boolean>(false);
+
+  const handleCloseSection = () => {
+    setClosing(true);
+    setTimeout(onCloseSection, 400);
+  };
+
   return (
     <S.CheckoutSection closing={false}>
       <S.CheckoutSectionConfirmation>
-        <S.BackIcon />
-        <OrderConfirmation />
+        <S.BackIcon onClick={handleCloseSection} />
+        <OrderConfirmation orders={orders} onOrdersChange={onOrdersChange} />
       </S.CheckoutSectionConfirmation>
       <S.CheckoutSectionPayment>
         <S.CheckoutSectionPaymentHead>Pagamento</S.CheckoutSectionPaymentHead>
