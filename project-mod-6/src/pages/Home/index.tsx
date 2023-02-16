@@ -77,7 +77,7 @@ const Home = () => {
             <b>Pizzas</b>
           </S.HomeProductTitle>
           <S.HomeProductList>
-          <ProductItemList onSelectTable={setSelectedTable}>
+            <ProductItemList onSelectTable={setSelectedTable}>
               {Boolean(products.length) &&
                 products.map((product, index) => (
                   <ProductItem
@@ -106,8 +106,10 @@ const Home = () => {
           <CheckoutSection
             orders={orders}
             onOrdersChange={(data) => setOrders(data)}
+            onChangeActiveOrderType={(data) => setActiverOrderType(data)}
+            activeOrderType={activeOrderType}
             onCloseSection={() => setProceedToPayment(false)}
-            selectedTable = {selectedTable}
+            selectedTable={selectedTable}
           />
         </Overlay>
       )}

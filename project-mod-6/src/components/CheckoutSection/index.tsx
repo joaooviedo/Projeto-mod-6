@@ -7,6 +7,7 @@ import { ReactComponent as Cash } from "assets/icons/wallet.svg";
 
 import * as S from "./style";
 import { OrderItemType } from "types/OrderItemType";
+import { OrderType } from "types/orderType";
 
 type CheckoutSectionType = HTMLAttributes<HTMLDivElement>;
 
@@ -14,6 +15,8 @@ type CheckoutSectionProps = {
   orders: OrderItemType[];
   selectedTable?: number;
   onOrdersChange: (orders: OrderItemType[]) => void;
+  onChangeActiveOrderType: (data: OrderType) => void;
+  activeOrderType: OrderType;
   onCloseSection: () => void;
 } & CheckoutSectionType;
 
@@ -21,6 +24,8 @@ const CheckoutSection = ({
   orders,
   selectedTable,
   onOrdersChange,
+  onChangeActiveOrderType,
+  activeOrderType,
   onCloseSection,
 }: CheckoutSectionProps) => {
   const [closing, setClosing] = useState<boolean>(false);
@@ -47,7 +52,7 @@ const CheckoutSection = ({
           </S.CheckoutSectionPaymentFormTitle>
           <S.PaymentForm>
             <S.PaymentFormCheckbox>
-              <CheckboxIcon active={false} value="Cartão" icon={<Card />} />
+              <CheckboxIcon active={true} value="Cartão" icon={<Card />} />
               <CheckboxIcon active={false} value="Dinheiro" icon={<Cash />} />
             </S.PaymentFormCheckbox>
             <>
@@ -57,7 +62,7 @@ const CheckoutSection = ({
                   type="text"
                   name="titular"
                   id="titular"
-                  placeholder="Marcus Silva"
+                  placeholder="João Vitor"
                 />
               </S.PaymentFormGroup>
 
@@ -67,7 +72,7 @@ const CheckoutSection = ({
                   type="text"
                   name="card"
                   id="card"
-                  placeholder="5369 7644 5393 3165"
+                  placeholder="1234 5678 9123 4567"
                 />
               </S.PaymentFormGroup>
 
@@ -83,7 +88,7 @@ const CheckoutSection = ({
                 </S.PaymentFormHalfItem>
                 <S.PaymentFormHalfItem>
                   <label htmlFor="cvv">CVV</label>
-                  <input type="text" name="cvv" id="cvv" placeholder="218" />
+                  <input type="text" name="cvv" id="cvv" placeholder="123" />
                 </S.PaymentFormHalfItem>
               </S.PaymentFormHalf>
             </>
@@ -93,8 +98,21 @@ const CheckoutSection = ({
           <S.PaymentActionsDetails>
             <S.PaymentActionsDetailsOrderType>
               <label htmlFor="card">Tipo de pedido</label>
-              <select>
-                <option>{""}</option>
+              <select
+                onChange={({ target }) =>
+                  onChangeActiveOrderType(target.value as OrderType)
+                }
+                name="order-type"
+                id="order-type"
+                value={Object.values(OrderType)
+                  .filter((option) => option === activeOrderType)
+                  .pop()}
+              >
+                {Object.values(OrderType).map((value, idx) => (
+                  <option key={`OrderType-${idx}`} value={value}>
+                    {value}
+                  </option>
+                ))}
               </select>
             </S.PaymentActionsDetailsOrderType>
             <S.PaymentActionsDetailsTableNumber>
