@@ -8,6 +8,7 @@ import { ReactComponent as Cash } from "assets/icons/wallet.svg";
 import * as S from "./style";
 import { OrderItemType } from "types/OrderItemType";
 import { OrderType } from "types/orderType";
+import { PaymentMethod } from "types/PaymentMethod";
 
 type CheckoutSectionType = HTMLAttributes<HTMLDivElement>;
 
@@ -28,6 +29,7 @@ const CheckoutSection = ({
   activeOrderType,
   onCloseSection,
 }: CheckoutSectionProps) => {
+  const [activeMethod, setActiveMethod] = useState<PaymentMethod>();
   const [closing, setClosing] = useState<boolean>(false);
 
   const handleCloseSection = () => {
@@ -52,46 +54,58 @@ const CheckoutSection = ({
           </S.CheckoutSectionPaymentFormTitle>
           <S.PaymentForm>
             <S.PaymentFormCheckbox>
-              <CheckboxIcon active={true} value="Cartão" icon={<Card />} />
-              <CheckboxIcon active={false} value="Dinheiro" icon={<Cash />} />
+              <CheckboxIcon
+                onClick={() => setActiveMethod(PaymentMethod.CARD)}
+                active={activeMethod === PaymentMethod.CARD}
+                value="Cartão"
+                icon={<Card />}
+              />
+              <CheckboxIcon
+                onClick={() => setActiveMethod(PaymentMethod.CASH)}
+                active={activeMethod === PaymentMethod.CASH}
+                value="Dinheiro"
+                icon={<Cash />}
+              />
             </S.PaymentFormCheckbox>
-            <>
-              <S.PaymentFormGroup>
-                <label htmlFor="titular">Titular do cartão</label>
-                <input
-                  type="text"
-                  name="titular"
-                  id="titular"
-                  placeholder="João Vitor"
-                />
-              </S.PaymentFormGroup>
+            {activeMethod === PaymentMethod.CARD && (
+              <>
+                <S.PaymentFormGroup>
+                  <label htmlFor="titular">Titular do cartão</label>
+                  <input
+                    type="text"
+                    name="titular"
+                    id="titular"
+                    placeholder="João Vitor"
+                  />
+                </S.PaymentFormGroup>
 
-              <S.PaymentFormGroup>
-                <label htmlFor="card">Número do cartão</label>
-                <input
-                  type="text"
-                  name="card"
-                  id="card"
-                  placeholder="1234 5678 9123 4567"
-                />
-              </S.PaymentFormGroup>
-
-              <S.PaymentFormHalf>
-                <S.PaymentFormHalfItem>
-                  <label htmlFor="validity">Validade</label>
+                <S.PaymentFormGroup>
+                  <label htmlFor="card">Número do cartão</label>
                   <input
                     type="text"
                     name="card"
-                    id="validity"
-                    placeholder="09/2023"
+                    id="card"
+                    placeholder="1234 5678 9123 4567"
                   />
-                </S.PaymentFormHalfItem>
-                <S.PaymentFormHalfItem>
-                  <label htmlFor="cvv">CVV</label>
-                  <input type="text" name="cvv" id="cvv" placeholder="123" />
-                </S.PaymentFormHalfItem>
-              </S.PaymentFormHalf>
-            </>
+                </S.PaymentFormGroup>
+
+                <S.PaymentFormHalf>
+                  <S.PaymentFormHalfItem>
+                    <label htmlFor="validity">Validade</label>
+                    <input
+                      type="text"
+                      name="card"
+                      id="validity"
+                      placeholder="09/2023"
+                    />
+                  </S.PaymentFormHalfItem>
+                  <S.PaymentFormHalfItem>
+                    <label htmlFor="cvv">CVV</label>
+                    <input type="text" name="cvv" id="cvv" placeholder="123" />
+                  </S.PaymentFormHalfItem>
+                </S.PaymentFormHalf>
+              </>
+            )}
           </S.PaymentForm>
         </S.CheckoutSectionPaymentForm>
         <S.PaymentActions>
