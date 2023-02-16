@@ -5,6 +5,7 @@ import * as S from "./style";
 import { RoutePath } from "types/routes";
 import NavColumnItem from "components/NavColumnItem";
 import { HTMLAttributes } from "react";
+import { useNavigate } from "react-router-dom";
 
 type NavColumnType = HTMLAttributes<HTMLDivElement>;
 
@@ -12,7 +13,9 @@ type NavColumnProps = {
   activeRoute: RoutePath;
 } & NavColumnType;
 
-const NavColumn = ({activeRoute}: NavColumnProps) => {
+const NavColumn = ({ activeRoute }: NavColumnProps) => {
+  const navigate = useNavigate();
+
   const items = [
     {
       icon: <Market />,
@@ -38,6 +41,7 @@ const NavColumn = ({activeRoute}: NavColumnProps) => {
       {" "}
       {items.map((item, key) => (
         <NavColumnItem
+          onClick={() => navigate(item.navigation)}
           active={item.navigation === activeRoute}
           icon={item.icon}
           title={item.title}
