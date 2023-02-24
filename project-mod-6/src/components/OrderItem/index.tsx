@@ -1,7 +1,7 @@
-import { ReactComponent as Trash } from "assets/icons/trash.svg";
+import { ReactComponent as Trash } from "../../assets/icons/trash.svg";
 import { ButtonHTMLAttributes, useEffect, useState } from "react";
-import { OrderItemType } from "types/OrderItemType";
-import { ProductResponse } from "types/Product";
+import { OrderItemType } from "../../types/OrderItemType";
+import { ProductResponse } from "../../types/Product";
 import * as S from "./style";
 
 type DivType = ButtonHTMLAttributes<HTMLDivElement>;

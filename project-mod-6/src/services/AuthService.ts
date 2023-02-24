@@ -1,8 +1,8 @@
-import { Api } from "helpers/endpoints/Api";
-import { endpoint } from "helpers/endpoints";
-import { ErrorResponse } from "types/api/error";
-import { Login, LoginResponse } from "types/api/login";
-import { User } from "types/api/user";
+import { Api } from "../helpers/endpoints/Api";
+import { endpoint } from "../helpers/endpoints";
+import { ErrorResponse } from "../types/api/error";
+import { Login, LoginResponse } from "../types/api/login";
+import { User } from "../types/api/user";
 
 export const AuthService = {
   login: (loginData: Login): Promise<LoginResponse & ErrorResponse> =>

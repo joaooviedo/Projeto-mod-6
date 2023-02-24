@@ -1,11 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { ReactComponent as Add } from "assets/icons/add.svg";
-import EditProduct from "components/EditProduct";
+import { ReactComponent as Add } from "../../assets/icons/add.svg";
+import EditProduct from "../../components/EditProduct";
 import { HTMLAttributes, useEffect, useState } from "react";
-import { ProductService } from "services/ProductService";
-import { ErrorResponse } from "types/api/error";
-import { Product, ProductResponse } from "types/api/product";
-import { QueryKey } from "types/QueryKey";
+import { ProductService } from "../../services/ProductService";
+import { ErrorResponse } from "../../types/api/error";
+import { Product, ProductResponse } from "../../types/api/product";
+import { QueryKey } from "../../types/QueryKey";
 import * as S from "./style";
 
 type ManageProductsType = HTMLAttributes<HTMLDivElement>;

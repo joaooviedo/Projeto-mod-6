@@ -1,5 +1,5 @@
 import * as S from "./style";
-import { TableResponse } from "types/api/table";
+import { TableResponse } from "../../types/api/table";
 
 interface ProductItemListProps {
   onSelectTable: (data: number) => void;

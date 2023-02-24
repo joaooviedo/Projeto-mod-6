@@ -1,7 +1,7 @@
 import logo from "../../assets/imgs/logo.png";
 import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
 import * as S from "../Menu/style";
-import { RoutePath } from "types/routes";
+import { RoutePath } from "../../types/routes";
 import { NavItem } from "./types";
 
 interface MenuProps {

@@ -1,12 +1,12 @@
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
-import { RoutePath } from "types/routes";
-import Home from "pages/Home";
-import Login from "pages/Login";
-import Settings from "./pages/Settings/index";
-import ManageProducts from "components/ManageProducts";
-import ManageUsers from "components/ManageUsers";
-import ManageTables from "components/ManageTables";
-import { Auth } from "helpers/Auth";
+import { RoutePath } from "./types/routes";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Settings from "./pages/Settings";
+import ManageProducts from "./components/ManageProducts";
+import ManageUsers from "./components/ManageUsers";
+import ManageTables from "./components/ManageUsers";
+import { Auth } from "./helpers/Auth";
 
 const AuthenticatedRoutes = () => {
   const isAuthenticated = Auth.isAuth();

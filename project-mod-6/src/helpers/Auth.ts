@@ -1,6 +1,6 @@
-import { LocalStorageHelper } from "helpers/LocalStorageHelper";
-import { LocalStorageKeys } from "types/LocalStorageKeys";
-import { RoutePath } from "types/routes";
+import { LocalStorageHelper } from "../helpers/LocalStorageHelper";
+import { LocalStorageKeys } from "../types/LocalStorageKeys";
+import { RoutePath } from "../types/routes";
 
 export const Auth = {
   isAuth: (): boolean => {

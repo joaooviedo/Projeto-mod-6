@@ -1,6 +1,6 @@
 import * as S from "./style";
 import logo from "../../assets/imgs/logo.png";
-import ButtonLarge from "components/ButtonLarge";
+import ButtonLarge from "../../components/ButtonLarge";
 import { HTMLAttributes, useState } from "react";
 
 type BoxLoginType = HTMLAttributes<HTMLDivElement>;

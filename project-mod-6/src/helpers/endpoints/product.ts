@@ -1,4 +1,4 @@
-import { endpoint } from 'helpers/endpoints';
+import { endpoint } from '../../helpers/endpoints';
 
 export const product = {
     createProduct: () => `${endpoint.baseUrl}/product`,

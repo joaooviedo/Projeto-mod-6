@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { ReactComponent as Back } from "assets/icons/back.svg";
+import { ReactComponent as Back } from "../../assets/icons/back.svg";
 
 /* Criamos as animações `slideShow`e `slideHide` para definir posteriormente o mecanismo de exibição da barra lateral. */
 

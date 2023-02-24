@@ -1,6 +1,6 @@
-import { Api } from "helpers/endpoints/Api";
-import { endpoint } from "helpers/endpoints";
-import { Order } from "types/api/order";
+import { Api } from "../helpers/endpoints/Api";
+import { endpoint } from "../helpers/endpoints";
+import { Order } from "../types/api/order";
 
 export const OrderService = {
   create: (order: Order) => {

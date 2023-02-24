@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Theme } from "types/styled-components";
+import { Theme } from "../../types/styled-components";
 
 export const ManageProducts = styled.section`
   ${() => css`

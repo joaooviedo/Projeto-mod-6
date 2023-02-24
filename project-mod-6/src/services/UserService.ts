@@ -1,6 +1,6 @@
-import { Api } from "helpers/endpoints/Api";
-import { endpoint } from "helpers/endpoints";
-import { User, UserUpdate } from "types/api/user";
+import { Api } from "../helpers/endpoints/Api";
+import { endpoint } from "../helpers/endpoints";
+import { User, UserUpdate } from "../types/api/user";
 
 export const UserService = {
   getLista: () =>

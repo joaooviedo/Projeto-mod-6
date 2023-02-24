@@ -1,6 +1,6 @@
-import { Api } from "helpers/endpoints/Api";
-import { endpoint } from "helpers/endpoints";
-import { Product, ProductResponse, ProductUpdate } from "types/api/product";
+import { Api } from "../helpers/endpoints/Api";
+import { endpoint } from "../helpers/endpoints";
+import { Product, ProductResponse, ProductUpdate } from "../types/api/product";
 
 export const ProductService = {
   getLista: (): Promise<ProductResponse[]> =>

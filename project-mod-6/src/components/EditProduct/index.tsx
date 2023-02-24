@@ -1,6 +1,6 @@
-import { ReactComponent as Pencil } from "assets/icons/edit.svg";
+import { ReactComponent as Pencil } from "../../assets/icons/edit.svg";
 import { useEffect, useState } from "react";
-import { ProductResponse } from "types/api/product";
+import { ProductResponse } from "../../types/api/product";
 import * as S from "./style";
 
 interface EditProductProps {

@@ -1,24 +1,24 @@
 import * as S from "./style";
 import { ReactComponent as Search } from "../../assets/icons/search.svg";
-import Menu from "components/Menu";
-import { RoutePath } from "types/routes";
-import { navigationItems } from "data/navigation";
+import Menu from "../../components/Menu";
+import { RoutePath } from "../../types/routes";
+import { navigationItems } from "../../data/navigation";
 import { DateTime } from "luxon";
-import ProductItemList from "components/ProductItemList";
-import ProductItem from "components/ProductItem";
-import OrderDetails from "components/OrderDetails";
-import Overlay from "components/Overlay";
-import CheckoutSection from "components/CheckoutSection";
+import ProductItemList from "../../components/ProductItemList";
+import ProductItem from "../../components/ProductItem";
+import OrderDetails from "../../components/OrderDetails";
+import Overlay from "../../components/Overlay";
+import CheckoutSection from "../../components/CheckoutSection";
 import { useNavigate } from "react-router-dom";
-import { ProductResponse } from "types/Product";
-import { OrderType } from "types/orderType";
+import { ProductResponse } from "../../types/Product";
+import { OrderType } from "../../types/orderType";
 import { useEffect, useState } from "react";
-import { OrderItemType } from "types/OrderItemType";
+import { OrderItemType } from "../../types/OrderItemType";
 import { useQuery } from "@tanstack/react-query";
-import { QueryKey } from "types/QueryKey";
-import { ProductService } from "services/ProductService";
-import { TableService } from "services/TableService";
-import { Auth } from "helpers/Auth";
+import { QueryKey } from "../../types/QueryKey";
+import { ProductService } from "../../services/ProductService";
+import { TableService } from "../../services/TableService";
+import { Auth } from "../../helpers/Auth";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({

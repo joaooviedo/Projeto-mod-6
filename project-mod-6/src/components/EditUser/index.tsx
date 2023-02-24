@@ -1,6 +1,6 @@
-import { ReactComponent as Pencil } from "assets/icons/edit.svg";
+import { ReactComponent as Pencil } from "../../assets/icons/edit.svg";
 import { useEffect, useState } from "react";
-import { User, UserResponse, UserUpdate } from "types/api/user";
+import { User, UserResponse, UserUpdate } from "../../types/api/user";
 import * as S from "./style";
 
 interface EditUserProps {

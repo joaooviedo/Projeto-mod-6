@@ -1,6 +1,6 @@
 import { ReactComponent as Pencil } from "assets/icons/edit.svg";
 import { useEffect, useState } from "react";
-import { TableResponse } from "types/api/table";
+import { TableResponse } from "../../types/api/table";
 import * as S from "./style";
 
 interface EditTableProps {

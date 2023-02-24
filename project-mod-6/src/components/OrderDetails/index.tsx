@@ -1,10 +1,10 @@
-import ButtonLarge from "components/ButtonLarge";
-import ButtonToggle from "components/ButtonToggle";
-import OrderItem from "components/OrderItem";
-import OrderItemList from "components/OrderItemList";
+import ButtonLarge from "../../components/ButtonLarge";
+import ButtonToggle from "../../components/ButtonToggle";
+import OrderItem from "../../components/OrderItem";
+import OrderItemList from "../../components/OrderItemList";
 import { HTMLAttributes, useEffect, useState } from "react";
-import { OrderItemType } from "types/OrderItemType";
-import { OrderType } from "types/orderType";
+import { OrderItemType } from "../../types/OrderItemType";
+import { OrderType } from "../../types/orderType";
 import * as S from "./style";
 
 type OrderDetailsType = HTMLAttributes<HTMLDivElement>;

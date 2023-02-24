@@ -1,6 +1,6 @@
-import { LocalStorageKeys } from "types/LocalStorageKeys";
-import { Auth } from 'helpers/Auth';
-import { LocalStorageHelper } from "helpers/LocalStorageHelper";
+import { LocalStorageKeys } from "../../types/LocalStorageKeys";
+import { Auth } from '../../helpers/Auth';
+import { LocalStorageHelper } from "../../helpers/LocalStorageHelper";
 
 type args = [input: RequestInfo, init?: RequestInit | undefined];
 

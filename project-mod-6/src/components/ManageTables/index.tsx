@@ -1,12 +1,12 @@
 import { HTMLAttributes, useEffect, useState } from "react";
 import { ReactComponent as Add } from "assets/icons/add.svg";
 import * as S from "./style";
-import EditTable from "components/EditTable";
+import EditTable from "../../components/EditTable";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { QueryKey } from "types/QueryKey";
-import { TableService } from "services/TableService";
-import { Table, TableResponse } from "types/api/table";
-import { ErrorResponse } from "types/api/error";
+import { QueryKey } from "../../types/QueryKey";
+import { TableService } from "../../services/TableService";
+import { Table, TableResponse } from "../../types/api/table";
+import { ErrorResponse } from "../../types/api/error";
 
 type ManageTablesType = HTMLAttributes<HTMLDivElement>;
 

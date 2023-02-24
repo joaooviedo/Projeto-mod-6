@@ -1,22 +1,22 @@
 import { HTMLAttributes, useState } from "react";
-import CheckboxIcon from "components/CheckboxIcon/Index";
-import OrderConfirmation from "components/OrderConfirmation/index";
+import CheckboxIcon from "../../components/CheckboxIcon/Index";
+import OrderConfirmation from "../../components/OrderConfirmation/index";
 
-import { ReactComponent as Card } from "assets/icons/credit-card.svg";
-import { ReactComponent as Cash } from "assets/icons/wallet.svg";
+import { ReactComponent as Card } from "../../assets/icons/credit-card.svg";
+import { ReactComponent as Cash } from "../../assets/icons/wallet.svg";
 
 import * as S from "./style";
-import { OrderItemType } from "types/OrderItemType";
-import { OrderType } from "types/orderType";
-import { PaymentMethod } from "types/PaymentMethod";
-import { ErrorResponse } from "types/api/error";
+import { OrderItemType } from "../../types/OrderItemType";
+import { OrderType } from "../../types/orderType";
+import { PaymentMethod } from "../../types/PaymentMethod";
+import { ErrorResponse } from "../../types/api/error";
 
 import { useMutation } from "@tanstack/react-query";
-import { OrderService } from "services/OrderService";
-import { LocalStorageHelper } from "helpers/LocalStorageHelper";
-import { LocalStorageKeys } from "types/LocalStorageKeys";
-import { UserResponse } from "types/api/user";
-import { Order } from "types/api/order";
+import { OrderService } from "../../services/OrderService";
+import { LocalStorageHelper } from "../../helpers/LocalStorageHelper";
+import { LocalStorageKeys } from "../../types/LocalStorageKeys";
+import { UserResponse } from "../../types/api/user";
+import { Order } from "../../types/api/order";
 
 type CheckoutSectionType = HTMLAttributes<HTMLDivElement>;
 

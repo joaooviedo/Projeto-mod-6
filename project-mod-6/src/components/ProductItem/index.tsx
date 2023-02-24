@@ -1,4 +1,4 @@
-import { ProductResponse } from "types/Product";
+import { ProductResponse } from "../../types/Product";
 import * as S from "./style";
 
 type ProductItemProps = {

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import { Theme } from "types/styled-components";
-import { ReactComponent as Check } from "assets/icons/check.svg";
+import { Theme } from "../../types/styled-components";
+import { ReactComponent as Check } from "../../assets/icons/check.svg";
 
 type CheckboxIconStyled = { active: boolean };
 

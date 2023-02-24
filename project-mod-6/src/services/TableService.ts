@@ -1,7 +1,7 @@
-import { Api } from "helpers/endpoints/Api";
-import { endpoint } from "helpers/endpoints";
-import { ErrorResponse } from "types/api/error";
-import { Table, TableResponse } from "types/api/table";
+import { Api } from "../helpers/endpoints/Api";
+import { endpoint } from "../helpers/endpoints";
+import { ErrorResponse } from "../types/api/error";
+import { Table, TableResponse } from "../types/api/table";
 
 export const TableService = {
   getLista: (): Promise<TableResponse[]> =>

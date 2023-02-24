@@ -1,13 +1,13 @@
-import BoxLogin from "components/BoxLogin";
-import { LocalStorageHelper } from "helpers/LocalStorageHelper";
+import BoxLogin from "../../components/BoxLogin";
+import { LocalStorageHelper } from "../../helpers/LocalStorageHelper";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthService } from "services/AuthService";
-import { ErrorResponse } from "types/api/error";
-import { Login as LoginData, LoginResponse } from "types/api/login";
-import { User } from "types/api/user";
-import { LocalStorageKeys } from "types/LocalStorageKeys";
-import { RoutePath } from "types/routes";
+import { AuthService } from "../../services/AuthService";
+import { ErrorResponse } from "../../types/api/error";
+import { Login as LoginData, LoginResponse } from "../../types/api/login";
+import { User } from "../../types/api/user";
+import { LocalStorageKeys } from "../../types/LocalStorageKeys";
+import { RoutePath } from "../../types/routes";
 import { useMutation } from "@tanstack/react-query";
 
 import * as S from "./style";

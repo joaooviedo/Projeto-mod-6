@@ -1,4 +1,4 @@
-import { OrderItemType } from "types/OrderItemType";
+import { OrderItemType } from "../OrderItemType";
   
 export interface Order {
   userId: string;

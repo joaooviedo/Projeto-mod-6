@@ -1,4 +1,4 @@
-import { LocalStorageKeys } from "types/LocalStorageKeys";
+import { LocalStorageKeys } from "../types/LocalStorageKeys";
 
 export const LocalStorageHelper = {
   get: <T>(key: LocalStorageKeys): T | null => {

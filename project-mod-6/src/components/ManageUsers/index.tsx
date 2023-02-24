@@ -1,11 +1,11 @@
-import { ReactComponent as Add } from "assets/icons/add.svg";
-import EditUser from "components/EditUser";
+import { ReactComponent as Add } from "../../assets/icons/add.svg";
+import EditUser from "../../components/EditUser";
 import { HTMLAttributes, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { UserService } from "services/UserService";
-import { ErrorResponse } from "types/api/error";
-import { User, UserResponse, UserUpdate } from "types/api/user";
-import { QueryKey } from "types/QueryKey";
+import { UserService } from "../../services/UserService";
+import { ErrorResponse } from "../../types/api/error";
+import { User, UserResponse, UserUpdate } from "../../types/api/user";
+import { QueryKey } from "../../types/QueryKey";
 import * as S from "./style";
 
 type ManageUsersType = HTMLAttributes<HTMLDivElement>;
