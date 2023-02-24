@@ -2,7 +2,7 @@ import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { RoutePath } from "types/routes";
 import Home from "pages/Home";
 import Login from "pages/Login";
-import Settings from "pages/Settings";
+import Settings from "./pages/Settings/index";
 import ManageProducts from "components/ManageProducts";
 import ManageUsers from "components/ManageUsers";
 import ManageTables from "components/ManageTables";
