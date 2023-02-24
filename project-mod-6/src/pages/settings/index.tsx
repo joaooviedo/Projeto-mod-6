@@ -1,9 +1,9 @@
 import * as S from "./style";
-import Menu from "components/Menu";
-import { RoutePath } from "types/routes";
-import { navigationItems } from "data/navigation";
+import Menu from "../../components/Menu";
+import { RoutePath } from "../../types/routes";
+import { navigationItems } from "../../data/navigation";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import NavColumn from "components/NavColumn";
+import NavColumn from "../../components/NavColumn";
 
 const Settings = () => {
   const navigate = useNavigate();
